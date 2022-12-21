@@ -1,0 +1,143 @@
+:root {
+  --bg-color: rgb(170, 223, 223);
+  --btn-radius: 4px;
+  --shadow: rgba(0, 0, 0, 0.05) 0px 6px 10px 0px,
+            rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
+  --btn-bg-color: rgb(236, 228, 228);
+  --drop-down-gap: .5rem;
+  --menu-color: rgb(49, 49, 49);
+  --menu-hover-color: rgb(79, 114, 108);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  background: rgb(236, 218, 218);
+  height: fit-content;
+  padding: .5rem;
+}
+
+button {
+  cursor: pointer;
+  border-radius: var(--btn-radius);
+  border: none;
+  box-shadow: var(--shadow);
+}
+
+.drop-down-container {
+  margin: 2rem;
+  font-size: 1.3rem;
+}
+
+.drop-down-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: var(--drop-down-gap);
+  margin: 0.5rem 0;
+  position: relative;
+}
+
+.drop-down {
+  position: absolute;
+  width: fit-content;
+  box-shadow: var(--shadow);
+  border-radius: var(--btn-radius);
+  background: var(--btn-bg-color);
+}
+
+.drop-down a {
+  display: flex;
+  align-items: center;
+  column-gap: var(--drop-down-gap);
+  padding: .8rem 1rem;
+  text-decoration: none;
+  color: var(--menu-color)
+}
+
+.drop-down a:hover {
+  background-color: var(--menu-hover-color);
+  color: white;
+}
+.bx {
+  font-size: 1.2rem;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.hamburger-container {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.hamburger-btn {
+  font-size: 3vh;
+  color: red;
+  background-color: transparent;
+}
+
+
+.bx.bx-menu-alt-right {
+  color: red;
+  font-size: 5rem;
+}
+
+.footer {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+button.plus-menu-btn{
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  position: relative;
+}
+
+button.plus-menu-btn:hover {
+  filter: brightness(65%)
+}
+
+.plus-menu-btn i {
+  font-size: 8rem;
+  color: rgb(18, 110, 75);
+}
+
+#plus-menu-icon {
+  font-size: 6rem;
+  color: rgb(40, 90, 83);
+}
+
+.plus-menu {
+  position: absolute;
+  bottom: 8rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 1fr);
+  gap: 2rem;
+}

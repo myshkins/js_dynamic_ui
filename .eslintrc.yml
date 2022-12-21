@@ -1,0 +1,11 @@
+env:
+  browser: true
+  es2021: true
+extends: airbnb-base
+overrides: [
+  semi: 0
+]
+parserOptions:
+  ecmaVersion: latest
+  sourceType: module
+rules: {}
