@@ -187,14 +187,28 @@ button.plus-menu-btn:hover {
   position: relative;
 }
 
-.slider-image {
+.slider-image-right {
   position: absolute;
-  left: 30vw;
+  left: 60vw;
+  opacity: 0;
+  z-index: 0;
+  transition: all 500ms ease-in-out;
+}
+
+.slider-image-left{
+  position: absolute;
+  left: -60vw;
+  opacity: 0;
+  z-index: 0;
+  transition: all 500ms ease-in-out;
 }
 
 .slider-image-active {
   position: absolute;
+  z-index: 1;
   left: 0;
+  opacity: 1;
+  transition: all 500ms ease-in-out;
 }
 
 .slider-controller {

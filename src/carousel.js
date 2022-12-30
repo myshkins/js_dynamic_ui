@@ -4,10 +4,10 @@ import picC from './img/c.jpeg'
 import picD from './img/d.jpeg'
 
 let imgObj = {
-    "1": picA,
-    "2": picB,
-    "3": picC,
-    "4": picD,
+    "0": picA,
+    "1": picB,
+    "2": picC,
+    "3": picD,
 }
 
 
@@ -25,11 +25,13 @@ const imgSlider = () => {
     let keys = Object.keys(imgObj)
     keys.forEach((key) => {
         let i = new Image()
+        i.classList.add('slider-image-right')
         i.classList.add('slider-image')
         i.src = imgObj[key]
         imgHolder.appendChild(i)
         imgObj[key] = i
 })
+    imgObj["0"].classList.add('slider-image-active')
 
     return slider
 }
@@ -39,14 +41,22 @@ const sliderController = () => {
     const linkButtons = () => {
         function changeImage(e) {
             let keys = Object.keys(imgObj)
+            let currImg = document.querySelector('.slider-image-active')
+            currImg.classList.remove('slider-image-active')
+            let nextNum = e.target.id.slice(-1)
             keys.forEach((key) => {
-                imgObj[key].classList.remove('slider-image-active')
+                if (key > nextNum) {
+                    imgObj[key].classList.remove('slider-image-left')
+                    imgObj[key].classList.add('slider-image-right')
+                } else if (key < nextNum) {
+                    imgObj[key].classList.remove('slider-image-right')
+                    imgObj[key].classList.add('slider-image-left')
+                } else {
+                    imgObj[`${nextNum}`].classList.remove('slider-image-right')
+                    imgObj[`${nextNum}`].classList.remove('slider-image-left')
+                    imgObj[`${nextNum}`].classList.add('slider-image-active')
+                }
             })
-
-            const parent = document.querySelector('.slider-controller')
-            let num = e.target.id.slice(-1)
-            let img = imgObj[`${num}`]
-            img.classList.add('slider-image-active')
         }
         const controlButtons = document.querySelectorAll('.slider-controller i')
         controlButtons.forEach((button) => {
