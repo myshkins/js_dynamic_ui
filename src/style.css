@@ -32,6 +32,21 @@ html {
   font-family: Helvetica, Arial, sans-serif;
 }
 
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b, u, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, article, aside, details, embed, 
+figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 1rem;
+	/* vertical-align: baseline; */
+    text-decoration: none;
+    color: var(--default-text-color)
+}
+
 .nav-bar {
   display: flex;
   align-items: center;
@@ -138,6 +153,57 @@ button.plus-menu-btn:hover {
   position: absolute;
   bottom: 8rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 1fr);
+  /* grid-template-columns: repeat(auto-fit, 1fr); */
   gap: 2rem;
 }
+
+
+/* image slider */
+.slider-container {
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider {
+  max-width: 60vw;
+}
+
+.slider-image {
+  max-width: 55vw;
+}
+
+.slider-holder {
+  white-space: nowrap;
+}
+
+.slider-frame {
+  border: 2px solid red;
+  overflow: hidden;
+  width: 50vw;
+  height: 40vh;
+  position: relative;
+}
+
+.slider-image {
+  position: absolute;
+  left: 30vw;
+}
+
+.slider-image-active {
+  position: absolute;
+  left: 0;
+}
+
+.slider-controller {
+  margin: 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.slider-controller i { transition: all .1s ease-in-out; }
+
+.slider-controller i:hover { transform: scale(1.05); }

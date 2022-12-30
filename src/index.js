@@ -1,11 +1,10 @@
 import './style.css';
-// import Kotaro from './kotaro.png'
+import {imgSlider, sliderController } from './carousel';
 
 function toggleDropDown(e) {
   const dropDownBtn = e.target
   const dropDown = dropDownBtn.nextElementSibling
   dropDown.classList.toggle('hidden')
-  // e.target.firstChild.classList.remove('hidden')
 }
 
 function hideDropDown(e) {
@@ -18,3 +17,10 @@ dropDowns.forEach((btn) => {
   const dropDown = btn.nextElementSibling
   dropDown.addEventListener('mouseleave', hideDropDown)
 })
+
+const slider = imgSlider()
+const sliderContainer = document.querySelector('.slider-container')
+sliderContainer.prepend(slider)
+
+const imgController = sliderController()
+imgController.linkButtons()
